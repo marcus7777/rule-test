@@ -24,7 +24,7 @@ Polymer({
   is: "rule-test",
   properties: {
     url: {value:"https://g1.firebaseio.com/.json"},
-    _url: {computed: "_getUrl"},
+    _url: {computed: "_getUrl(url, add)"},
     add: {value:""}
   },
   _stringify: function(obj) {
