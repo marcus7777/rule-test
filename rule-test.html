@@ -1,5 +1,5 @@
-<link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
-<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="../polymer/polymer.html">
 <!--
 `<rule-test></rule-test>` Security rule testing
 @demo demo.html
@@ -10,7 +10,7 @@
     <iron-ajax auto url="{{url}}" handle-as="json" last-response="{{data}}" last-error="{{error}}"> </iron-ajax>
     err?
     <template is="dom-if" if="{{error}}">
-      {{_stringify(error.message)}}
+      {{_stringify(error)}}
     </template>
     <br />
     users
