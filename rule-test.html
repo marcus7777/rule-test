@@ -9,7 +9,7 @@
   <template>
     <iron-ajax auto url="{{url}}" handle-as="json" last-response="{{data}}" last-error="{{error}}"> </iron-ajax>
     err?
-    <template is="dom-if" if="{{error.message}}">
+    <template is="dom-if" if="{{error}}">
       {{_stringify(error.message)}}
     </template>
     <br />
