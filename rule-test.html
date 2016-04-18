@@ -7,7 +7,7 @@
 
 <dom-module id="rule-test">
   <template>
-    <iron-ajax auto url="{{url}}" handle-as="json" last-response="{{data}}" last-error="{{error}}"> </iron-ajax>
+    <iron-ajax auto url="{{_url}}" handle-as="json" last-response="{{data}}" last-error="{{error}}"> </iron-ajax>
     err?
     <template is="dom-if" if="{{error}}">
       {{_stringify(error.error.message)}}
@@ -23,10 +23,15 @@
 Polymer({
   is: "rule-test",
   properties: {
-    url: {value:"https://g1.firebaseio.com/.json"}
+    url: {value:"https://g1.firebaseio.com/.json"},
+    _url: {computed: "_getUrl"},
+    add: {value:""}
   },
   _stringify: function(obj) {
     return JSON.stringify(obj)
+  },
+  _getUrl: function(url, add) {
+    return url + "" + add
   }
 })
 </script>
